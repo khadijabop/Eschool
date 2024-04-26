@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View -->
+        <record id="view_class_form" model="ir.ui.view">
+            <field name="name">class.form</field>
+            <field name="model">eschool.class</field>
+            <field name="arch" type="xml">
+                <form string="Classe">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="student_ids"/>
+                            <field name="course_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="view_class_tree" model="ir.ui.view">
+            <field name="name">class.tree</field>
+            <field name="model">eschool.class</field>
+            <field name="arch" type="xml">
+                <tree string="Class">
+                    <field name="name"/>
+                    <field name="student_ids"/>
+                    <field name="course_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_class" model="ir.actions.act_window">
+            <field name="name">Classe</field>
+            <field name="res_model">eschool.course</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menu -->
+
+        <menuitem id="menu_class_list" name="Listes Classes" parent="eschool_root" action="action_class" sequence="10"/>
+    </data>
+</odoo>

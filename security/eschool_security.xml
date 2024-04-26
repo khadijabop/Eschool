@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id = "module_eschool_security" model="ir.module.category">
+        <field name = "name">Etablissement</field>
+        <field name="description">Gestion d'établissement scolaire</field>
+    </record>
+
+    <record id="eschool_group_user" model="res.groups">
+        <field name="name">Utilisateur</field>
+        <field name="category_id" ref="module_eschool_security"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="eschool_group_manager" model="res.groups">
+        <field name="name">Administrateur</field>
+        <field name="category_id" ref="module_eschool_security"/>
+        <field name="implied_ids" eval="[(4, ref('eschool_group_user'))]"/>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+    </record>
+
+     <record id="eschool_group_prof" model="res.groups">
+         <field name="name">Professeur</field>
+        <field name="category_id" ref="module_eschool_security"/>
+        <field name="implied_ids" eval="[(4, ref('eschool_group_user'))]"/>
+       <!-- <field name="users" eval="[(4, ref('base.group_user')), (4, ref('base.user_admin'))]"/>-->
+    </record>
+
+    <record id="eschool_group_eleve" model="res.groups">
+         <field name="name">Eleve</field>
+        <field name="category_id" ref="module_eschool_security"/>
+        <field name="implied_ids" eval="[(4, ref('eschool_group_user'))]"/>
+        <!--<field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>-->
+    </record>
+
+
+
+</odoo>

@@ -1,0 +1,26 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+droit_admin_dans_eleve,Acces eleve,eschool.model_eschool_student,eschool.eschool_group_manager,1,1,1,1
+droit_admin_dans_prof,Acces prof,eschool.model_eschool_teacher,eschool.eschool_group_manager,1,1,1,1
+droit_admin_dans_cours,Acces cours,eschool.model_eschool_course,eschool.eschool_group_manager,1,1,1,1
+droit_admin_dans_classe,Acces classe,eschool.model_eschool_class,eschool.eschool_group_manager,1,1,1,1
+
+
+
+droit_prof_dans_eleve,Acces prof,eschool.model_eschool_student,eschool.eschool_group_prof,1,0,0,0
+droit_prof_dans_prof,Acces prof,eschool.model_eschool_teacher,eschool.eschool_group_prof,1,1,0,0
+droit_prof_dans_cours,Acces prof,eschool.model_eschool_course,eschool.eschool_group_prof,1,0,0,0
+droit_prof_dans_classe,Acces prof,eschool.model_eschool_class,eschool.eschool_group_prof,1,0,0,0
+
+
+droit_eleve_dans_eleve,Acces eleve,eschool.model_eschool_student,eschool.eschool_group_eleve,1,1,0,0
+droit_eleve_dans_prof,Acces eleve,eschool.model_eschool_teacher,eschool.eschool_group_eleve,1,0,0,0
+droit_eleve_dans_cours,Acces eleve,eschool.model_eschool_course,eschool.eschool_group_eleve,1,0,0,0
+droit_eleve_dans_classe,Acces eleve,eschool.model_eschool_class,eschool.eschool_group_eleve,1,0,0,0
+
+
+
+
+
+
+
